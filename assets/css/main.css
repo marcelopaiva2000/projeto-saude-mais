@@ -2143,3 +2143,7 @@ section,
   text-align: center;
   margin-top: 10px;
 }
+
+.img {
+  filter: drop-shadow(10px 0 30px #484848);  
+}
