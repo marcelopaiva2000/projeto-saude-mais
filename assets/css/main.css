@@ -926,7 +926,7 @@ section,
 }
 
 .img {
-  filter: drop-shadow(10px 0 30px #ffff);
+  filter: drop-shadow(#ffff);
 }
 
 @media (max-width: 640px) {
