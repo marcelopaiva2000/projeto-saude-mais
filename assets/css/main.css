@@ -1143,6 +1143,10 @@ section,
   max-height: 70%;
 }
 
+.why-us .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
