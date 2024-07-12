@@ -926,7 +926,7 @@ section,
 }
 
 .hero .img {
-  filter: drop-shadow(10px 0 30px #ffff);
+  filter: drop-shadow(20px 0 30px #ffff);
 }
 
 @media (max-width: 640px) {
