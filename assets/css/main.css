@@ -1270,7 +1270,7 @@ section,
 
 .call-to-action:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 35%);
+  background: color-mix(in srgb, var(--background-color), transparent 65%);
   position: absolute;
   inset: 0;
   z-index: 2;
