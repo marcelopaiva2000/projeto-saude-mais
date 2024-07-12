@@ -1271,7 +1271,7 @@ section,
 
 .call-to-action:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 5%);
+  background: color-mix(in srgb, var(--background-color), transparent 70%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1302,8 +1302,8 @@ section,
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  border: 2px solid var(--contrast-color2);
-  color: var(--contrast-color2);
+  border: 2px solid var(--contrast-color);
+  color: var(--contrast-color);
 }
 
 .call-to-action .cta-btn:hover {
