@@ -2143,3 +2143,13 @@ section,
   text-align: center;
   margin-top: 10px;
 }
+
+.subtitulo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+}
