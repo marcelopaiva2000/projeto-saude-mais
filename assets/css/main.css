@@ -925,7 +925,7 @@ section,
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
-.img {
+.hero .img {
   filter: drop-shadow(10px 0 30px #ffff);
 }
 
