@@ -1272,12 +1272,6 @@ section,
   z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .call-to-action img {
-      max-width: 300px; /* ou outro valor adequado */
-      height: auto;
-  }
-}
 .call-to-action:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 80%);
