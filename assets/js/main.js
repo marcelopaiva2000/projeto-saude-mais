@@ -225,92 +225,42 @@
 /* cadastre-se */
 document.getElementById('registerForm').addEventListener('submit', function (e) {
   e.preventDefault();
+  
   const password = document.getElementById('password').value;
   const confirmPassword = document.getElementById('confirmPassword').value;
 
   if (password !== confirmPassword) {
-    alert('As senhas não correspondem.');
+    alert('As senhas não coincidem. Por favor, verifique.');
     return;
   }
 
-  const email = document.getElementById('email').value;
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    alert('Por favor, insira um e-mail válido.');
-    return;
-  }
-
-  const formData = {
-    hospital: {
-      nome: document.getElementById('companyName').value,
-      cnpj: document.getElementById('cnpj').value,
-      endereco: {
-        cep: document.getElementById('cep').value,
-        rua: document.getElementById('address').value,
-        cidade: document.getElementById('city').value,
-        estado: document.getElementById('state').value
-      },
-      usuario: {
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value
-      },
-      telefone: document.getElementById('phone').value
-    }
-  };
-
-  fetch('https://develop-api.saudemais.app/api/v1/auth/empresa/registrar-hospital', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(formData)
-  })
-      .then(response => {
-        if (response.status === 200) {
-          alert('Cadastro realizado com sucesso!');
-        } else {
-          response.json().then(data => {
-            alert('Erro no cadastro: ' + (data.message || response.statusText));
-          });
-        }
-      })
-      .catch(error => {
-        alert('Erro: ' + error.message);
-      });
+  alert('Formulário enviado com sucesso!');
 });
 
+const cepInput = document.getElementById('cep');
+const stateInput = document.getElementById('state');
+const citySelect = document.getElementById('city');
 
-document.getElementById('cep').addEventListener('blur', function () {
+cepInput.addEventListener('input', async function () {
   const cep = this.value.replace(/\D/g, '');
+
   if (cep.length === 8) {
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-      .then(response => response.json())
-      .then(data => {
-        if (!data.erro) {
-          document.getElementById('address').value = data.logradouro;
-          document.getElementById('city').value = data.localidade;
-          document.getElementById('state').value = data.uf;
-        } else {
-          alert('CEP não encontrado.');
-        }
-      });
-  } else {
-    alert('CEP inválido.');
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await response.json();
+
+      if (!data.erro) {
+        stateInput.value = data.uf;
+        citySelect.innerHTML = `<option value="${data.localidade}">${data.localidade}</option>`;
+      } else {
+        alert('CEP não encontrado.');
+        stateInput.value = '';
+        citySelect.innerHTML = '<option value="">Selecione a cidade</option>';
+      }
+    } catch (error) {
+      console.error('Erro ao buscar o CEP:', error);
+    }
   }
-});
-
-document.getElementById('cnpj').addEventListener('input', function () {
-  this.value = this.value.replace(/\D/g, '')
-    .replace(/^(\d{2})(\d)/, '$1.$2')
-    .replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
-    .replace(/\.(\d{3})(\d)/, '.$1/$2')
-    .replace(/(\d{4})(\d)/, '$1-$2');
-});
-
-document.getElementById('phone').addEventListener('input', function () {
-  this.value = this.value.replace(/\D/g, '')
-    .replace(/^(\d{2})(\d)/, '($1) $2')
-    .replace(/(\d{5})(\d)/, '$1-$2');
 });
 
 /* Form Teste Gratis */

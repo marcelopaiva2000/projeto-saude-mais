@@ -59,18 +59,60 @@
     <!-- Starter Section Section -->
     <section class="register-section">
       <form class="register-form" id="registerForm">
-        <h2>Cadastre-se</h2>
-        <input type="text" id="companyName" name="companyName" placeholder="Nome da empresa" required>
-        <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ" required>
-        <input type="text" id="cep" name="cep" placeholder="CEP" required>
-        <input type="text" id="address" name="address" placeholder="Endereço" required>
-        <input type="text" id="city" name="city" placeholder="Cidade" required readonly>
+
+        <!-- Dados da Empresa -->
+        <h1 class="subtitulo">Dados da Empresa</h1>
+        <label for="institutionType">Tipo de instituição *</label>
+        <select id="institutionType" name="institutionType" required>
+          <option value="">Selecione o tipo de instituição</option>
+          <option value="hospitalar">Instituição Hospitalar</option>
+          <option value="profissionalSaude">Profissional da Saúde</option>
+        </select>
+
+        <label for="institutionType">Nome da Empresa / Profissional *</label>
+        <input type="text" id="companyName" name="companyName" placeholder="Digite o nome da empresa ou profissional" required>
+
+        <!-- Dados de Acesso -->
+        <h1 class="subtitulo">Dados de Acesso</h1>
+        <label for="institutionType">E-mail *</label>
+        <input type="email" id="email" name="email" placeholder="Digite aqui o seu e-mail" required>
+        <label for="institutionType">Senha *</label>
+        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+        <label for="institutionType">Confirma senha *</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="" required>
+
+        <!-- Dados Para Contato -->
+        <h1 class="subtitulo">Contato</h1>
+        <label for="institutionType">CEP *</label>
+        <input type="text" id="cep" name="cep" placeholder="Ex. 54321-123" required>
+        <label for="institutionType">Estado *</label>
         <input type="text" id="state" name="state" placeholder="Estado" required readonly>
-        <input type="text" id="phone" name="phone" placeholder="Telefone" required>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="password" id="password" name="password" placeholder="Senha" required>
-        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar senha" required>
-        <button type="submit">Registrar</button>
+        <label for="institutionType">Cidade *</label>
+        <select id="city" name="city" required>
+          <option value="">Selecione a cidade</option>
+        </select>
+        <label for="institutionType">Bairro</label>
+        <input type="text" id="neighborhood" name="neighborhood" placeholder="Opcional">
+        <label for="institutionType">Endereço</label>
+        <input type="text" id="address" name="address" placeholder="Opcional">
+        <label for="institutionType">Complemento</label>
+        <input type="text" id="complement" name="complement" placeholder="Opcional">
+        <label for="institutionType">Telefone Fixo</label>
+        <input type="text" id="phone" name="phone" placeholder="Ex. (11) 3333-4444">
+        <label for="institutionType">Celular</label>
+        <input type="text" id="cellPhone" name="cellPhone" placeholder="Ex. (22) 99999-8888">
+
+        <!-- Termos de Uso -->
+        <h1 class="subtitulo">Termos de Uso</h1>
+        <p><a href="termosdeservico.html" target="_blank">Ler os termos de uso</a></p>
+        <div>
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms"><strong>Eu li e aceito os termos de uso *</strong></label>
+        </div>
+
+        <!-- Botão -->
+        <button type="submit">Começar teste grátis</button>
+
         <div class="login-link">
           <p>Já possui conta? <a href="https://develop-hospital.saudemais.app/">Faça login</a></p>
         </div>
@@ -112,7 +154,7 @@
           <div class="social-links d-flex">
           <!--  <a href=""><i class="bi bi-twitter-x"></i></a> -->
           <!--  <a href=""><i class="bi bi-facebook"></i></a> -->
-          <!--  <a href=""><i class="bi bi-instagram"></i></a> -->
+            <a href="https://wa.me/5521970467268?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20aplicativo%20SaúdeMais."><i class="bi bi-whatsapp"></i></a>
             <a href="https://www.linkedin.com/company/dali-tech-solutions/"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>

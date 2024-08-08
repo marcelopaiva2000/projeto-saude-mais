@@ -171,8 +171,7 @@ h6 {
   text-transform: uppercase;
 }
 
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
+.header .btn-getstarted {
   color: var(--contrast-color);
   background: var(--accent-color22);
   font-size: 14px;
@@ -182,8 +181,7 @@ h6 {
   transition: 0.3s;
 }
 
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
+.header .btn-getstarted:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color22), transparent 15%);
 }
@@ -2123,17 +2121,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-
-
-.separador {
-  border: 0;
-    height: 0.5px;
-    background: #a6a5a5;
-    background-image: linear-gradient(to right, #ccc, #a6a5a5, #ccc);
-    margin: 20px auto;
-    width: 87%;
-}
-
 /* cadastre-se */
 .register-section {
   display: flex;
@@ -2152,16 +2139,20 @@ section,
   width: 100%;
 }
 
-.register-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
+.register-form h1 {
+  text-align: left;
+  font-size: 35px;
+  margin-bottom: -0px;
+  margin-top: -0px;
+  margin-left: -10px;
   font-weight: bold;
+  color: #048053;
 }
 
 .register-form input[type="text"],
 .register-form input[type="email"],
-.register-form input[type="password"] {
+.register-form input[type="password"],
+.register-form select {
   width: 100%;
   padding: 10px;
   margin: 5px 0 15px 0;
@@ -2199,6 +2190,12 @@ section,
   text-align: left;
   margin: 20px 0;
   padding: 10px;
+}
+
+.register-form input::placeholder,
+.register-form select::placeholder {
+  font-size: 0.9em; 
+  color: #888; 
 }
 
 /* Call to Action Novo */
@@ -2373,4 +2370,26 @@ section,
     flex-direction: column-reverse; /* Altera a ordem das colunas no mobile */
  }
 }
+
+/* Botao Login */
+.header .login {
+  background-color: #344970;
+  margin-right: -21px;
+}
+
+.header .login:hover {
+  background-color: #4a6088;
+}
+
+@media (max-width: 768px) {
+  .header .login {
+    background-color: #344970;
+    margin-right:  5px;
+  }
+  
+  .header .login:hover {
+    background-color: #4a6088;
+  }
+}
+
 
