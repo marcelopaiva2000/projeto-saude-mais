@@ -240,8 +240,45 @@ document.getElementById('registerForm').addEventListener('submit', function (e) 
     return;
   }
 
-  alert('Cadastro realizado com sucesso!');
+  const formData = {
+    hospital: {
+      nome: document.getElementById('companyName').value,
+      cnpj: document.getElementById('cnpj').value,
+      endereco: {
+        cep: document.getElementById('cep').value,
+        rua: document.getElementById('address').value,
+        cidade: document.getElementById('city').value,
+        estado: document.getElementById('state').value
+      },
+      usuario: {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      },
+      telefone: document.getElementById('phone').value
+    }
+  };
+
+  fetch('https://develop-api.saudemais.app/api/v1/auth/empresa/registrar-hospital', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+      .then(response => {
+        if (response.status === 200) {
+          alert('Cadastro realizado com sucesso!');
+        } else {
+          response.json().then(data => {
+            alert('Erro no cadastro: ' + (data.message || response.statusText));
+          });
+        }
+      })
+      .catch(error => {
+        alert('Erro: ' + error.message);
+      });
 });
+
 
 document.getElementById('cep').addEventListener('blur', function () {
   const cep = this.value.replace(/\D/g, '');
@@ -274,4 +311,28 @@ document.getElementById('phone').addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '')
     .replace(/^(\d{2})(\d)/, '($1) $2')
     .replace(/(\d{5})(\d)/, '$1-$2');
+});
+
+/* Form Teste Gratis */
+document.getElementById('trialForm-cta').addEventListener('submit', function(event) {
+  const email = document.getElementById('email-cta').value;
+  const cep = document.getElementById('cep-cta').value;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const cepPattern = /^[0-9]{8}$/;
+
+  let valid = true;
+
+  if (!emailPattern.test(email)) {
+    alert('Por favor, insira um email válido.');
+    valid = false;
+  }
+
+  if (!cepPattern.test(cep)) {
+    alert('O CEP deve conter 8 números.');
+    valid = false;
+  }
+
+  if (!valid) {
+    event.preventDefault();
+  }
 });

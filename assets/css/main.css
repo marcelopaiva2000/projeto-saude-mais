@@ -8,9 +8,11 @@
 /* Global Colors */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --background-color2: #048053; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #048053; /* Color for headings, subheadings and title throughout the website */
   --accent-color2: #47b2e4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color22: #048053; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --accent-color3: #ffffff;
   --accent-color4: #000000;
   --accent-color22: #048053;
@@ -1209,12 +1211,43 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.swiper-button-next {
+  width: 2px; /* Ajuste o tamanho conforme necessário */
+  height: 30px; /* Ajuste o tamanho conforme necessário */
+}
+
+.swiper-button-prev {
+  width: 2px; /* Ajuste o tamanho conforme necessário */
+  height: 30px; /* Ajuste o tamanho conforme necessário */
+}
+
+
+.services .swiper-wrapper {
+  padding-top: 20px;
+}
+
 .services .service-item {
   background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
-  padding: 50px 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 35px 30px;
   transition: all ease-in-out 0.4s;
-  height: 100%;
+  width: 90%;
+  height: 290px;
+   
+}
+
+@media (max-width: 768px) {
+  .services .service-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 35px 30px;
+    transition: all ease-in-out 0.4s;
+    width: 90%;
+    height: 300px;
+     
+  }
+
+  
 }
 
 .services .service-item .icon {
@@ -1252,66 +1285,67 @@ section,
   color: var(--accent-color22);
 }
 
-/*--------------------------------------------------------------
-# Call To Action Section
---------------------------------------------------------------*/
-.call-to-action {
-  padding: 120px 0;
+.services .swiper-wrapper {
+  height: auto;
+  overflow: visible;
+}
+
+.services .swiper-pagination {
+  margin-top: 40px;
   position: relative;
-  clip-path: inset(0);
 }
 
-.call-to-action img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+.services .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.call-to-action:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 80%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.services .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color22);
 }
 
-.call-to-action .container {
-  position: relative;
-  z-index: 3;
+
+/* SWIPER DO SERVICE */
+
+ 
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
 }
 
-.call-to-action h3 {
-  color: var(--default-color);
-  font-size: 28px;
-  font-weight: 700;
+.swiper-pagination-bullets {
+  bottom: 10px;
 }
 
-.call-to-action p {
-  color: var(--default-color);
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent-color22);
 }
 
-.call-to-action .cta-btn {
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 12px 40px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 10px;
-  border: 2px solid var(--contrast-color);
-  color: var(--contrast-color);
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  
 }
 
-.call-to-action .cta-btn:hover {
-  background: var(--accent-color22);
-  border: 2px solid var(--accent-color22);
+.services .swiper-slide {
+  width: calc(100% / 3); /* Para desktops, cada slide ocupa 1/3 da largura */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .services .swiper-slide {
+    width: 100%; /* Em dispositivos móveis, cada slide ocupa toda a largura disponível */
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1547,7 +1581,7 @@ section,
 .pricing .pricing-item {
   background-color: var(--surface-color);
   box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid var(--background-color);
+  border-top: 4px solid var(--background-color2);
   padding: 60px 40px;
   height: 100%;
   border-radius: 5px;
@@ -1560,7 +1594,7 @@ section,
 }
 
 .pricing h4 {
-  color: var(--accent-color2);
+  color: var(--accent-color22);
   font-size: 48px;
   font-weight: 400;
   font-family: var(--heading-font);
@@ -1601,7 +1635,7 @@ section,
 }
 
 .pricing ul .na i {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  color: color-mix(in srgb, var(--default-color22), transparent 60%);
 }
 
 .pricing ul .na span {
@@ -1609,7 +1643,7 @@ section,
 }
 
 .pricing .buy-btn {
-  color: var(--accent-color2);
+  color: var(--accent-color22);
   display: inline-block;
   padding: 8px 35px 10px 35px;
   border-radius: 50px;
@@ -1618,21 +1652,29 @@ section,
   font-weight: 500;
   font-family: var(--heading-font);
   transition: 0.3s;
-  border: 1px solid var(--accent-color2);
+  border: 1px solid var(--accent-color22);
 }
 
 .pricing .buy-btn:hover {
-  background: var(--accent-color2);
+  background: var(--accent-color22);
   color: var(--contrast-color);
 }
 
 .pricing .featured {
-  border-top-color: var(--accent-color2);
+  border-top-color: var(--accent-color22);
 }
 
 .pricing .featured .buy-btn {
-  background: var(--accent-color2);
+  background: var(--accent-color22);
   color: var(--contrast-color);
+}
+
+.pricing .pricing-item {
+  transition: transform 0.3s ease-in-out;
+}
+
+.pricing .pricing-item:hover {
+  transform: translateY(-10px);
 }
 
 @media (max-width: 992px) {
@@ -1720,6 +1762,8 @@ section,
   top: 10px;
   transform: scale(-1, -1);
 }
+
+
 
 .testimonials .testimonial-item p {
   font-style: italic;
@@ -2156,3 +2200,177 @@ section,
   margin: 20px 0;
   padding: 10px;
 }
+
+/* Call to Action Novo */
+
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.img-note {
+  margin-top: -75px;
+  margin-left: 40px;
+}
+
+.call-to-action {
+  position: relative;
+  clip-path: inset(0);
+  height: 490px;
+}
+
+@media (max-width: 768px) {
+  .call-to-action {
+    position: relative;
+    clip-path: inset(0);
+    height: auto;
+    top: 20px;
+  }
+
+  .img-note {
+    margin-top: -60px;
+    margin-left: 0;
+  }
+  
+}
+
+
+.call-to-action .fundo-tela {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 25%;
+}
+
+.call-to-action:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 80%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.call-to-action .container {
+  position: relative;
+  z-index: 3;
+  overflow: visible;
+}
+
+@media (min-width: 769px) {
+  .call-to-action .container {
+    position: relative;
+    z-index: 3;
+    padding: 0px 0px 0px 130px;
+
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .call-to-action .container {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+  }
+  
+}
+
+.form-section h3 {
+  color: var(--default-color);
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.call-to-action p {
+  color: var(--default-color);
+}
+
+.form .cta-btn {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid var(--contrast-color);
+  color: var(--contrast-color);
+}
+
+.form .cta-btn:hover {
+  background: var(--accent-color22);
+  border: 2px solid var(--accent-color22);
+}
+
+.form-section {
+  background-color: #048053; /* Verde */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  max-width: 500px;
+  height: 100%;
+  margin-left: -75px;
+}
+
+.form-section h1 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-section input {
+  padding: 10px;
+  border: 1px solid #048053; /* Verde mais escuro */
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-section button {
+  padding: 10px;
+  border-style: solid;
+  border-color: #4a4a4a;
+  border-radius: 20px;
+  background-color: white; /* Verde mais escuro */
+  color: #048053;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  opacity: 80%;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .form-section {
+      max-width: 100%;
+      margin-left: 0;
+  }
+
+  .ordem {
+    flex-direction: column-reverse; /* Altera a ordem das colunas no mobile */
+ }
+}
+

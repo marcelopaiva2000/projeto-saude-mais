@@ -27,6 +27,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -48,6 +49,7 @@
           <li><a href="#hero" class="active">Início</a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#services">Serviços</a></li>
+          <li><a href="#pricing">Planos</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -78,6 +80,8 @@
         </div>
       </div>
 
+      
+      
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
@@ -188,11 +192,32 @@
         <p>Soluções que a Saúde+ oferece para você</p>
       </div><!-- End Section Title -->
 
-      <div class="container">
+      <div class="container swiper">
 
-        <div class="row gy-4">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              }
+              
+            }
+          </script>
+          <div class="swiper-wrapper">
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-phone icon"></i></div>
               <h4><a>Praticidade no Aplicativo</a></h4>
@@ -202,7 +227,7 @@
           </div><!-- End Service Item -->
 
           <!-- Retirado o link do item (href="" class="stretched-link")-->
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-hospital icon"></i></div>
               <h4><a>Captações de Profissionais</a></h4>
@@ -210,7 +235,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-person-check icon"></i></div>
               <h4><a>Especialistas na Área Desejada</a></h4>
@@ -219,7 +244,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-calendar2-check icon"></i></div>
               <h4><a>Compromisso com a Escala</a></h4>
@@ -229,7 +254,7 @@
           </div><!-- End Service Item -->
 
           <!-- Alterar este cartão -->
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-database-lock icon"></i></div>
               <h4><a>Escala Restrita</a></h4>
@@ -238,7 +263,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-file-earmark-bar-graph icon"></i></div>
               <h4><a>Relatórios Instantâneos</a></h4>
@@ -247,7 +272,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-chat-left-text icon"></i></div>
               <h4><a>Informação em Tempo Real</a></h4>
@@ -256,7 +281,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="swiper-slide">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
               <h4><a>Demais Serviços</a></h4>
@@ -267,9 +292,98 @@
 
         </div>
 
+      <div class="swiper-pagination"></div>
+      <!-- Swiper Navigation -->
+       
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+        </div>
+
       </div>
 
     </section><!-- /Services Section -->
+
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>NOSSOS PLANOS</h2>
+          <p>Oferecemos uma variedade de serviços para atender às suas necessidades, com planos flexíveis e acessíveis</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-4" data-aos="fade-right" data-aos-delay="300">
+              <div class="pricing-item">
+                <h3>BÁSICO</h3>
+                <h4><sup>R$</sup>399<span>/ MÊS</span></h4>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>50 profissionais vinculados</span></li>
+                  <li><i class="bi bi-check"></i> <span>Aplicativo iOS/Android</span></li>
+                  <li><i class="bi bi-check"></i> <span>Suporte E-mail/Chat</span></li>
+                  <li><i class="bi bi-check"></i> <span>Relatórios Analíticos/Detalhado</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Controle de pagamentos e controle de notas fiscais emitidas pelo profissional </span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Relatórios Personalizados</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Pagamentos de plantões centralizados</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Controle de escala (Múltiplos plantões)</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Facilidade em migrações de plantões interno para externos</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Mais funcionalidades</span></li>
+                </ul>
+                <a href="#" class="buy-btn"><STROng>ASSINAR</STROng></a>
+              </div>
+            </div><!-- End Pricing Item -->
+  
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="pricing-item">
+                <h3>INTERMEDIÁRIO</h3>
+                <h4><sup>R$</sup>699<span>/ MÊS</span></h4>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>50 profissionais vinculados</span></li>
+                  <li><i class="bi bi-check"></i> <span>Aplicativo iOS/Android</span></li>
+                  <li><i class="bi bi-check"></i> <span>Suporte E-mail/Chat</span></li>
+                  <li><i class="bi bi-check"></i> <span>Relatórios Analíticos/Detalhado</span></li>
+                  <li><i class="bi bi-check"></i> <span>Controle de pagamentos e controle de notas fiscais emitidas pelo profissional </span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Relatórios Personalizados</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Pagamentos de plantões centralizados</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Controle de escala (Múltiplos plantões)</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Facilidade em migrações de plantões interno para externos</span></li>
+                  <li class="na"><i class="bi bi-x"></i> <span>Mais funcionalidades</span></li>
+                </ul>
+                <a href="#" class="buy-btn"><strong>ASSINAR</strong></a>
+              </div>
+            </div><!-- End Pricing Item -->
+  
+            <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
+              <div class="pricing-item">
+                <h3>PREMIUM</h3>
+                <h4 style="font-size: 40px;"><strong>CONSULTE</strong></h4>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>50 profissionais vinculados</span></li>
+                  <li><i class="bi bi-check"></i> <span>Aplicativo iOS/Android</span></li>
+                  <li><i class="bi bi-check"></i> <span>Suporte E-mail/Chat</span></li>
+                  <li><i class="bi bi-check"></i> <span>Relatórios Analíticos/Detalhado</span></li>
+                  <li><i class="bi bi-check"></i> <span>Controle de pagamentos e controle de notas fiscais emitidas pelo profissional </span></li>
+                  <li><i class="bi bi-check"></i> <span>Relatórios Personalizados</span></li>
+                  <li><i class="bi bi-check"></i> <span>Pagamentos de plantões centralizados</span></li>
+                  <li><i class="bi bi-check"></i> <span>Controle de escala (Múltiplos plantões)</span></li>
+                  <li><i class="bi bi-check"></i> <span>Facilidade em migrações de plantões interno para externos</span></li>
+                  <li><i class="bi bi-check"></i> <span>Mais funcionalidades</span></li>
+                </ul>
+                <a href="#" class="buy-btn"><strong>ASSINAR</strong></a>
+              </div>
+            </div><!-- End Pricing Item -->
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Pricing Section -->
+
 
 
     <!-- Faq 2 Section -->
@@ -391,27 +505,38 @@
     </section><!-- /Faq 2 Section -->
 
     <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
+    
+    <section id="call-to-action form" class="call-to-action section dark-background">
 
+      <div class="fundo-tela">
       <img src="assets/img/layout2.png" alt="">
-
+      </div>
+      
       <div class="container">
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-9 text-center text-xl-start">
-            <h3>Vamos fazer um <strong>Teste grátis?</strong></h3>
-            <p>Simplifique sua gestão médica! Descubra o app que organiza e facilita a administração das suas
-              especialidades. Faça um teste grátis agora e tenha tudo sob controle!
-            </p>
-          </div>
-          <div class="col-xl-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="cadastrar.html">EXPERIMENTE AGORA</a>
-          </div>
+        <div class="row ordem" data-aos="fade-up" data-aos-delay="100">
+          <div class="form-section">
+            <h3 style="text-align: center;">Experimente <br> <strong>grátis por 30 dias!</strong></h3>
+            <form id="trialForm-cta">
+              <input type="text" id="name-cta" placeholder="Nome Completo" required>
+              <input type="email" id="email-cta" placeholder="Email" required>
+              <input type="text" id="cep-cta" placeholder="CEP" pattern="[0-9]{8}" title="O CEP deve conter 8 números" required>
+              <button class="cta-btn" type="submit"><strong>SOLICITE</strong> TESTE GRÁTIS</button>
+          </form>
+        </div>
+        
+        <div class="col-lg-7 img-note">
+          <img src="assets/img/mockup-notebook.png" class="img-fluid" alt="" data-aos="fade-up">
+        </div>
+      
         </div>
 
       </div>
 
-    </section><!-- /Call To Action Section -->
+    </section>
+    
+    <!-- /Call To Action Section -->
+  
 
   </main>
 
@@ -424,7 +549,7 @@
             <span class="sitename">Saúde +</span>
           </a>
           <div class="footer-contact pt-3">
-            <p class="mt-3"><strong>Telefone:</strong><span> +55 (21) 97046-7268</span></p>
+            <p class="mt-3"><strong>Telefone:</strong> <span>+55 (21) 97046-7268</span></p>
             <p><strong>Email:</strong> <span>dali@dalitechsolutions.com</span></p>
           </div>
         </div>
@@ -481,6 +606,7 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
